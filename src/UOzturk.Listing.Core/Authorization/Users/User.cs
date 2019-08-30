@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using Abp.Authorization.Users;
 using Abp.Extensions;
+using UOzturk.Listing.List;
 
 namespace UOzturk.Listing.Authorization.Users
 {
     public class User : AbpUser<User>
     {
         public const string DefaultPassword = "123qwe";
+        public ICollection<UserCreatedList> UserCreatedList;
 
         public static string CreateRandomPassword()
         {
