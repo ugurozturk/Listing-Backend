@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Abp.Application.Services.Dto;
+using System.ComponentModel.DataAnnotations;
 
 namespace UOzturk.Listing.ListType.Dto
 {
-    public class UpdateListTypeDto
+    public class UpdateListTypeDto : EntityDto
     {
         [Required]
         public int ListTypeId { get; set; }

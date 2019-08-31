@@ -1,7 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Abp.AutoMapper;
+using System.ComponentModel.DataAnnotations;
 
 namespace UOzturk.Listing.ListType.Dto
 {
+    [AutoMapTo(typeof(List.ListType))]
     public class CreateListTypeDto
     {
         [Required]
