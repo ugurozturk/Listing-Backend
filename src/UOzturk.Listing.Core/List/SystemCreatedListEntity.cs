@@ -8,6 +8,7 @@ namespace UOzturk.Listing.List
     [Table("SystemCreatedList")]
     public class SystemCreatedListEntity : FullAuditedEntity, IFullAudited
     {
+        [Required]
         [MaxLength(100)]
         public string Name { get; set; }
 
