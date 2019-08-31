@@ -11,6 +11,8 @@ namespace UOzturk.Listing.List
         [MaxLength(50)]
         public string Name { get; set; }
 
+        public ICollection<UserCreatedList> UserCreatedList { get; set; }
+
         public ICollection<SystemCreatedList> SystemCreatedListCollection { get; set; }
     }
 }
