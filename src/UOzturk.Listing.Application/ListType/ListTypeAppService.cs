@@ -21,9 +21,9 @@ using UOzturk.Listing.List;
 namespace UOzturk.Listing.ListType
 {
     [AbpAuthorize(PermissionNames.Pages_Users)] //TODO:Ugur this might be wrong, check if user can access this method.
-    public class ListTypeAppService : AsyncCrudAppService<List.ListType, ListTypeDto, int, ListTypePagedRequestDto, CreateListTypeDto, UpdateListTypeDto>, IListTypeAppService
+    public class ListTypeAppService : AsyncCrudAppService<ListTypeEntity, ListTypeDto, int, ListTypePagedRequestDto, CreateListTypeDto, UpdateListTypeDto>, IListTypeAppService
     {
-        public ListTypeAppService(IRepository<List.ListType, int> repository) : base(repository)
+        public ListTypeAppService(IRepository<ListTypeEntity, int> repository) : base(repository)
         {
         }
     }

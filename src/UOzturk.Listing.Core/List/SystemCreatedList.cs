@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace UOzturk.Listing.List
 {
     [Table("SystemCreatedList")]
-    public class SystemCreatedList : FullAuditedEntity, IFullAudited
+    public class SystemCreatedListEntity : FullAuditedEntity, IFullAudited
     {
         [MaxLength(100)]
         public string Name { get; set; }
@@ -14,8 +14,8 @@ namespace UOzturk.Listing.List
         [ForeignKey("ListType")]
         public int ListTypeId { get; set; }
 
-        public ListType ListType { get; set; }
+        public ListTypeEntity ListType { get; set; }
 
-        public ICollection<SystemCreatedListItem> SystemCreatedListItemCollection { get; set; }
+        public ICollection<SystemCreatedListItemEntity> SystemCreatedListItemCollection { get; set; }
     }
 }

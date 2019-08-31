@@ -9,7 +9,7 @@ namespace UOzturk.Listing.Authorization.Users
     public class User : AbpUser<User>
     {
         public const string DefaultPassword = "123qwe";
-        public ICollection<UserCreatedList> UserCreatedList;
+        public ICollection<UserCreatedListEntity> UserCreatedList;
 
         public static string CreateRandomPassword()
         {

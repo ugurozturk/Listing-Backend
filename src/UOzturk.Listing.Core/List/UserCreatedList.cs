@@ -8,7 +8,7 @@ using UOzturk.Listing.Authorization.Users;
 namespace UOzturk.Listing.List
 {
     [Table("UserCreatedList")]
-    public class UserCreatedList : FullAuditedEntity, IFullAudited
+    public class UserCreatedListEntity : FullAuditedEntity, IFullAudited
     {
         [MaxLength(100)]
         public string Name { get; set; }
@@ -21,6 +21,6 @@ namespace UOzturk.Listing.List
 
         public User User { get; set; }
 
-        public ListType ListType { get; set; }
+        public ListTypeEntity ListType { get; set; }
     }
 }

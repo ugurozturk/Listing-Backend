@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 namespace UOzturk.Listing.List
 {
     [Table("UserCreatedListItemTag")]
-    public class UserCreatedListItemTag : FullAuditedEntity, IFullAudited
+    public class UserCreatedListItemTagEntity : FullAuditedEntity, IFullAudited
     {
         [MaxLength(25)]
         public string Name { get; set; }
@@ -16,6 +16,6 @@ namespace UOzturk.Listing.List
         [ForeignKey("UserCreatedListItem")]
         public int UserCreatedListItemId { get; set; }
 
-        public UserCreatedListItem UserCreatedListItem { get; set; }
+        public UserCreatedListItemEntity UserCreatedListItem { get; set; }
     }
 }

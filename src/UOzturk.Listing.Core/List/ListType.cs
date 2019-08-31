@@ -6,13 +6,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace UOzturk.Listing.List
 {
     [Table("ListType")]
-    public class ListType : FullAuditedEntity, IFullAudited
+    public class ListTypeEntity : FullAuditedEntity, IFullAudited
     {
         [MaxLength(50)]
         public string Name { get; set; }
 
-        public ICollection<UserCreatedList> UserCreatedList { get; set; }
+        public ICollection<UserCreatedListEntity> UserCreatedList { get; set; }
 
-        public ICollection<SystemCreatedList> SystemCreatedListCollection { get; set; }
+        public ICollection<SystemCreatedListEntity> SystemCreatedListCollection { get; set; }
     }
 }

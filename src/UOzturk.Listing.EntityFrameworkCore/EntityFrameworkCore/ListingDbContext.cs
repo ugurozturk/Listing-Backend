@@ -9,17 +9,17 @@ namespace UOzturk.Listing.EntityFrameworkCore
 {
     public class ListingDbContext : AbpZeroDbContext<Tenant, Role, User, ListingDbContext>
     {
-        public DbSet<ListType> ListType { get; set; }
+        public DbSet<ListTypeEntity> ListType { get; set; }
 
-        public DbSet<SystemCreatedList> SystemCreatedList { get; set; }
+        public DbSet<SystemCreatedListEntity> SystemCreatedList { get; set; }
 
-        public DbSet<SystemCreatedListItem> SystemCreatedListItem { get; set; }
+        public DbSet<SystemCreatedListItemEntity> SystemCreatedListItem { get; set; }
 
-        public DbSet<UserCreatedListItemTag> UserCreatedListItemTag { get; set; }
+        public DbSet<UserCreatedListItemTagEntity> UserCreatedListItemTag { get; set; }
 
-        public DbSet<UserCreatedList> UserCreatedList { get; set; }
+        public DbSet<UserCreatedListEntity> UserCreatedList { get; set; }
 
-        public DbSet<UserCreatedListItem> UserCreatedListItem { get; set; }
+        public DbSet<UserCreatedListItemEntity> UserCreatedListItem { get; set; }
 
         public ListingDbContext(DbContextOptions<ListingDbContext> options)
             : base(options)

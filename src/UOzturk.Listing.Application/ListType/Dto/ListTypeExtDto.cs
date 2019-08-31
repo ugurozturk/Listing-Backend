@@ -7,8 +7,8 @@ namespace UOzturk.Listing.ListType.Dto
     {
         public string Name { get; set; }
 
-        public IList<UserCreatedList> UserCreatedList { get; set; }
+        public IList<UserCreatedListEntity> UserCreatedList { get; set; }
 
-        public IList<SystemCreatedList> SystemCreatedListCollection { get; set; }
+        public IList<SystemCreatedListEntity> SystemCreatedListCollection { get; set; }
     }
 }
