@@ -19,11 +19,14 @@ namespace UOzturk.Listing.UserCreatedList
     public class UserCreatedListAppService : AsyncCrudAppService<UserCreatedListEntity, UserCreatedListDto, int, UserCreatedListPagedRequestDto, CreateUserCreatedListDto, UserCreatedListDto>, IUserCreatedListAppService
     {
         private readonly IRepository<UserCreatedListItemEntity, int> _userCreatedListItemEntity;
+        private readonly IRepository<UserCreatedListItemTagEntity, int> _userCreatedListItemTagEntity;
         public UserCreatedListAppService(
             IRepository<UserCreatedListEntity, int> repository,
-            IRepository<UserCreatedListItemEntity, int> userCreatedListItemEntity) : base(repository)
+            IRepository<UserCreatedListItemEntity, int> userCreatedListItemEntity,
+            IRepository<UserCreatedListItemTagEntity, int> userCreatedListItemTagEntity) : base(repository)
         {
             _userCreatedListItemEntity = userCreatedListItemEntity;
+            _userCreatedListItemTagEntity = userCreatedListItemTagEntity;
         }
 
         #region User Created List Item
@@ -63,5 +66,41 @@ namespace UOzturk.Listing.UserCreatedList
         }
 
         #endregion User Created List Item
+
+        #region User Created List Item Tag
+        public IQueryable<UserCreatedListItemTagEntity> QueryableUserCreatedListItemTag(UserCreatedListItemTagPagedRequestDto input)
+        {
+            return _userCreatedListItemTagEntity.GetAll()
+                .WhereIf(!input.Name.IsNullOrWhiteSpace(), x => x.Name.Contains(input.Name))
+                .WhereIf(input.UserCreatedListItemId.HasValue, x => x.UserCreatedListItemId == input.UserCreatedListItemId);
+        }
+
+        public async Task<UserCreatedListItemTagDto> GetUserCreatedListItemTag(UserCreatedListItemTagPagedRequestDto input)
+        {
+            CheckGetPermission();
+
+            var userCreatedListItemTagEntity = await QueryableUserCreatedListItemTag(input).FirstOrDefaultAsync();
+            return ObjectMapper.Map<UserCreatedListItemTagDto>(userCreatedListItemTagEntity);
+        }
+
+        public async Task<List<UserCreatedListItemTagDto>> GetUserCreatedListItemTagList(UserCreatedListItemTagPagedRequestDto input)
+        {
+            CheckGetPermission();
+
+            var userCreatedListItemTagEntity = await QueryableUserCreatedListItemTag(input).ToListAsync();
+            return ObjectMapper.Map<List<UserCreatedListItemTagDto>>(userCreatedListItemTagEntity);
+        }
+
+        public async Task<UserCreatedListItemTagDto> CreateUserCreatedListItemTag(CreateUserCreatedListItemTagDto createUserCreatedListItemDto)
+        {
+            CheckCreatePermission();
+
+            var createUserCreatedListItemTagEntity = ObjectMapper.Map<UserCreatedListItemTagEntity>(createUserCreatedListItemDto);
+            var newCreatedEntity = await _userCreatedListItemTagEntity.InsertAsync(createUserCreatedListItemTagEntity);
+
+            return ObjectMapper.Map<UserCreatedListItemTagDto>(newCreatedEntity);
+        }
+
+        #endregion User Created List Item Tag
     }
 }
