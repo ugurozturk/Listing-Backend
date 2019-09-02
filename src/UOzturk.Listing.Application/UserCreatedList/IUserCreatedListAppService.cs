@@ -4,7 +4,7 @@ using UOzturk.Listing.UserCreatedList.Dto;
 
 namespace UOzturk.Listing.UserCreatedList
 {
-    public interface IUserCreatedListAppService : IAsyncCrudAppService<UserCreatedListDto, int, UserCreatedListPagedRequestDtoDto, CreateUserCreatedListDto, UserCreatedListDto>
+    public interface IUserCreatedListAppService : IAsyncCrudAppService<UserCreatedListDto, int, UserCreatedListPagedRequestDto, CreateUserCreatedListDto, UserCreatedListDto>
     {
     }
 }
