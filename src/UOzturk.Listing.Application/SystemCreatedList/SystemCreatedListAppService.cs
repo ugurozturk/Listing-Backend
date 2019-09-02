@@ -10,9 +10,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using UOzturk.Listing.Authorization;
 using UOzturk.Listing.List;
-using UOzturk.Listing.ListType.Dto;
+using UOzturk.Listing.SystemCreatedList.Dto;
 
-namespace UOzturk.Listing.ListType
+namespace UOzturk.Listing.SystemCreatedList
 {
     [AbpAuthorize(PermissionNames.Pages_Users)] //TODO:Ugur this might be wrong, check if user can access this method.
     public class SystemCreatedListAppService : AsyncCrudAppService<SystemCreatedListEntity, SystemCreatedListDto, int, SystemCreatedListPagedRequestDto, CreateSystemCreatedListDto, UpdateSystemCreatedListDto>, ISystemCreatedListAppService

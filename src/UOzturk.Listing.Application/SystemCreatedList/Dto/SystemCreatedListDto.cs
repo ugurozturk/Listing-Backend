@@ -2,7 +2,7 @@
 using Abp.AutoMapper;
 using UOzturk.Listing.List;
 
-namespace UOzturk.Listing.ListType.Dto
+namespace UOzturk.Listing.SystemCreatedList.Dto
 {
     [AutoMapFrom(typeof(SystemCreatedListEntity))]
     public class SystemCreatedListDto : EntityDto

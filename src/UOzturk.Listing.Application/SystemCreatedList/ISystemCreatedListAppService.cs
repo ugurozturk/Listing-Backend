@@ -1,7 +1,7 @@
 ﻿using Abp.Application.Services;
-using UOzturk.Listing.ListType.Dto;
+using UOzturk.Listing.SystemCreatedList.Dto;
 
-namespace UOzturk.Listing.ListType
+namespace UOzturk.Listing.SystemCreatedList
 {
     public interface ISystemCreatedListAppService : IAsyncCrudAppService<SystemCreatedListDto, int, SystemCreatedListPagedRequestDto, CreateSystemCreatedListDto, UpdateSystemCreatedListDto>
     {

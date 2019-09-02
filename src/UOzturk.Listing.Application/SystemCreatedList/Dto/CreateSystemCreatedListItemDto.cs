@@ -4,7 +4,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using UOzturk.Listing.List;
 
-namespace UOzturk.Listing.ListType.Dto
+namespace UOzturk.Listing.SystemCreatedList.Dto
 {
     [AutoMapTo(typeof(SystemCreatedListItemEntity))]
     public class CreateSystemCreatedListItemDto : EntityDto
