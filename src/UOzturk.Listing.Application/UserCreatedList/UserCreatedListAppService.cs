@@ -30,7 +30,7 @@ namespace UOzturk.Listing.UserCreatedList
         }
 
         #region User Created List Item
-        public IQueryable<UserCreatedListItemEntity> QueryableUserCreatedListItem(UserCreatedListItemPagedRequestDto input)
+        protected IQueryable<UserCreatedListItemEntity> QueryableUserCreatedListItem(UserCreatedListItemPagedRequestDto input)
         {
             return _userCreatedListItemEntity.GetAll()
                 .WhereIf(!input.Name.IsNullOrWhiteSpace(), x=>x.Name.Contains(input.Name))
@@ -60,15 +60,23 @@ namespace UOzturk.Listing.UserCreatedList
             CheckCreatePermission();
 
             var createUserCreatedListItemEntity = ObjectMapper.Map<UserCreatedListItemEntity>(createUserCreatedListItemDto);
+            try
+            {
             var newCreatedEntity = await _userCreatedListItemEntity.InsertAsync(createUserCreatedListItemEntity);
-
+            await CurrentUnitOfWork.SaveChangesAsync();
             return ObjectMapper.Map<UserCreatedListItemDto>(newCreatedEntity);
+
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
         }
 
         #endregion User Created List Item
 
         #region User Created List Item Tag
-        public IQueryable<UserCreatedListItemTagEntity> QueryableUserCreatedListItemTag(UserCreatedListItemTagPagedRequestDto input)
+        protected IQueryable<UserCreatedListItemTagEntity> QueryableUserCreatedListItemTag(UserCreatedListItemTagPagedRequestDto input)
         {
             return _userCreatedListItemTagEntity.GetAll()
                 .WhereIf(!input.Name.IsNullOrWhiteSpace(), x => x.Name.Contains(input.Name))
