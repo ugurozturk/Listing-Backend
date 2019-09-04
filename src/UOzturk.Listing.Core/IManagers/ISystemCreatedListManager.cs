@@ -1,12 +1,12 @@
-﻿using Abp.Domain.Repositories;
+﻿using Abp.Domain.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using UOzturk.Listing.List;
 
-namespace UOzturk.Listing.IRepositories
+namespace UOzturk.Listing.IManagers
 {
-    public interface ISystemCreatedListRepository : IRepository<SystemCreatedListEntity>
+    public interface ISystemCreatedListManager: IDomainService
     {
         List<SystemCreatedListEntity> GetAllWithItems(int? listTypeId);
     }

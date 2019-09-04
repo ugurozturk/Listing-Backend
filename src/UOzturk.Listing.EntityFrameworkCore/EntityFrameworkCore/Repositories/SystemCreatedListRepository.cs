@@ -20,13 +20,13 @@ namespace UOzturk.Listing.EntityFrameworkCore.Repositories
         /// </summary>
         /// <param name="ListTypeId"></param>
         /// <returns></returns>
-        public List<SystemCreatedListEntity> GetAllWithItems(int? ListTypeId)
+        public List<SystemCreatedListEntity> GetAllWithItems(int? listTypeId)
         {
             var query = GetAll();
 
-            if (ListTypeId.HasValue)
+            if (listTypeId.HasValue)
             {
-                query = query.Where(x => x.ListTypeId == ListTypeId.Value);
+                query = query.Where(x => x.ListTypeId == listTypeId.Value);
             }
 
             return query
