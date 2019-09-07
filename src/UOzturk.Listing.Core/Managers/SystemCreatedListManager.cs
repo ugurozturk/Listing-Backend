@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using UOzturk.Listing.DefinitionTypes.SystemCreatedList;
 using UOzturk.Listing.IManagers;
 using UOzturk.Listing.IRepositories;
 using UOzturk.Listing.List;
@@ -17,9 +18,9 @@ namespace UOzturk.Listing.Managers
             _systemCreatedListRepository = systemCreatedListRepository;
         }
 
-        public List<SystemCreatedListEntity> GetAllWithItems(int? listTypeId)
+        public List<SystemCreatedListEntity> GetAllWithItems(SystemCreatedListPagedRequestDto input)
         {
-            return _systemCreatedListRepository.GetAllWithItems(listTypeId);
+            return _systemCreatedListRepository.GetAllWithItems(input);
         }
     }
 }
