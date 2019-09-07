@@ -5,20 +5,37 @@ using Abp.Extensions;
 using Abp.Notifications;
 using Abp.Timing;
 using UOzturk.Listing.Controllers;
+using UOzturk.Listing.SystemCreatedList;
+using System;
+using Newtonsoft.Json;
 
 namespace UOzturk.Listing.Web.Host.Controllers
 {
     public class HomeController : ListingControllerBase
     {
         private readonly INotificationPublisher _notificationPublisher;
+        private readonly ISystemCreatedListAppService _systemCreatedListManager;
 
-        public HomeController(INotificationPublisher notificationPublisher)
+        public HomeController(INotificationPublisher notificationPublisher, ISystemCreatedListAppService systemCreatedListManager)
         {
             _notificationPublisher = notificationPublisher;
+            _systemCreatedListManager = systemCreatedListManager;
         }
 
         public IActionResult Index()
         {
+            try
+            {
+                var test = _systemCreatedListManager.GetAllWithItems(1);
+                var testJson = JsonConvert.SerializeObject(test,new JsonSerializerSettings(){
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            }
+            catch(Exception ex)
+            {
+
+            }
+
             return Redirect("/swagger");
         }
 

@@ -29,10 +29,7 @@ namespace UOzturk.Listing.EntityFrameworkCore.Repositories
                 query = query.Where(x => x.ListTypeId == listTypeId.Value);
             }
 
-            return query
-                .Include(x => x.ListType)
-                .Include(x => x.SystemCreatedListItemCollection)//.ThenInclude(cs=>cs.SystemCreatedList)
-                .ToList();
+            return query.ToList();
         }
     }
 }

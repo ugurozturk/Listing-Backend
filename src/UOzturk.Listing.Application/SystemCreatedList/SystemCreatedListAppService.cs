@@ -15,7 +15,6 @@ using UOzturk.Listing.SystemCreatedList.Dto;
 
 namespace UOzturk.Listing.SystemCreatedList
 {
-    [AbpAuthorize(PermissionNames.Pages_Users)] //TODO:Ugur this might be wrong, check if user can access this method.
     public class SystemCreatedListAppService : AsyncCrudAppService<SystemCreatedListEntity, SystemCreatedListDto, int, SystemCreatedListPagedRequestDto, CreateSystemCreatedListDto, UpdateSystemCreatedListDto>, ISystemCreatedListAppService
     {
         private readonly ISystemCreatedListManager _systemCreatedListManager;
@@ -30,7 +29,10 @@ namespace UOzturk.Listing.SystemCreatedList
 
         public List<SystemCreatedListEntity> GetAllWithItems(int? listTypeId)
         {
-            return _systemCreatedListManager.GetAllWithItems(listTypeId);
+            var test = _systemCreatedListManager.GetAllWithItems(listTypeId);
+
+
+            return test;
         }
 
         //public IQueryable<SystemCreatedListItemEntity> QueryableSystemCreatedListItem(SystemCreatedListItemPagedRequestDto systemCreatedListItemPagedRequest)

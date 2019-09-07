@@ -16,6 +16,6 @@ namespace UOzturk.Listing.List
         [ForeignKey("UserCreatedListItem")]
         public int UserCreatedListItemId { get; set; }
 
-        public UserCreatedListItemEntity UserCreatedListItem { get; set; }
+        public virtual UserCreatedListItemEntity UserCreatedListItem { get; set; }
     }
 }

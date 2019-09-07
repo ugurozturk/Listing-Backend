@@ -19,8 +19,8 @@ namespace UOzturk.Listing.List
         [ForeignKey("User")]
         public long ListOwnerUserId { get; set; }
 
-        public User User { get; set; }
+        public virtual User User { get; set; }
 
-        public ListTypeEntity ListType { get; set; }
+        public virtual ListTypeEntity ListType { get; set; }
     }
 }

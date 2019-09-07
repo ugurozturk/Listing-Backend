@@ -18,8 +18,8 @@ namespace UOzturk.Listing.List
         [ForeignKey("SystemCreatedListItem")]
         public int SystemCreatedListItemId { get; set; }
 
-        public UserCreatedListEntity UserCreatedList { get; set; }
+        public virtual UserCreatedListEntity UserCreatedList { get; set; }
 
-        public SystemCreatedListItemEntity SystemCreatedListItem { get; set; }
+        public virtual SystemCreatedListItemEntity SystemCreatedListItem { get; set; }
     }
 }

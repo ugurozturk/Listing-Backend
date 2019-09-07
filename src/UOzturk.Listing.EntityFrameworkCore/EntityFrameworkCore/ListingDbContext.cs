@@ -25,5 +25,6 @@ namespace UOzturk.Listing.EntityFrameworkCore
             : base(options)
         {
         }
+
     }
 }

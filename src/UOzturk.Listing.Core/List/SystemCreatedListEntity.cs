@@ -15,8 +15,8 @@ namespace UOzturk.Listing.List
         [ForeignKey("ListType")]
         public int ListTypeId { get; set; }
 
-        public ListTypeEntity ListType { get; set; }
+        public virtual ListTypeEntity ListType { get; set; }
 
-        public ICollection<SystemCreatedListItemEntity> SystemCreatedListItemCollection { get; set; }
+        public virtual ICollection<SystemCreatedListItemEntity> SystemCreatedListItemCollection { get; set; }
     }
 }
