@@ -2,7 +2,7 @@
 
 namespace UOzturk.Listing.UserCreatedListItemTag
 {
-    public interface ISystemCreatedListItemAppService : IAsyncCrudAppService<SystemCreatedListItemDto, int, SystemCreatedListItemPagedRequestDto, CreateSystemCreatedListItemDto, SystemCreatedListItemDto>
+    public interface IUserCreatedListItemTagAppService : IAsyncCrudAppService<UserCreatedListItemTagDto, int, UserCreatedListItemTagPagedRequestDto, CreateUserCreatedListItemTagDto, UserCreatedListItemTagDto>
     {
     }
 }
