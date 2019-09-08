@@ -1,5 +1,4 @@
 ﻿using Abp.Application.Services;
-using UOzturk.Listing.UserCreatedList.Dto;
 
 namespace UOzturk.Listing.UserCreatedList
 {
