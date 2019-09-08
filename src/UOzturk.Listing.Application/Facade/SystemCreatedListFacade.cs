@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UOzturk.Listing.IRepositories;
-using UOzturk.Listing.ListType.Dto;
+using UOzturk.Listing.ListType;
 using UOzturk.Listing.SystemCreatedList;
 using UOzturk.Listing.SystemCreatedListItem;
 

@@ -1,5 +1,4 @@
 ﻿using Abp.Application.Services;
-using UOzturk.Listing.ListType.Dto;
 
 namespace UOzturk.Listing.ListType
 {

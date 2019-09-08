@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace UOzturk.Listing.ListType.Dto
+namespace UOzturk.Listing.ListType
 {
     public class RemoveListTypeDto
     {

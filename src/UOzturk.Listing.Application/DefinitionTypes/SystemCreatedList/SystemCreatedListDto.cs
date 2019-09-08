@@ -2,7 +2,7 @@
 using Abp.AutoMapper;
 using System.Collections.Generic;
 using UOzturk.Listing.List;
-using UOzturk.Listing.ListType.Dto;
+using UOzturk.Listing.ListType;
 using UOzturk.Listing.SystemCreatedListItem;
 
 namespace UOzturk.Listing.SystemCreatedList

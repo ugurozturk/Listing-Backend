@@ -3,7 +3,6 @@ using Abp.Authorization;
 using Abp.Domain.Repositories;
 using UOzturk.Listing.Authorization;
 using UOzturk.Listing.List;
-using UOzturk.Listing.ListType.Dto;
 
 namespace UOzturk.Listing.ListType
 {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UOzturk.Listing.List;
 
-namespace UOzturk.Listing.ListType.Dto
+namespace UOzturk.Listing.ListType
 {
     public class ListTypeExtDto
     {
