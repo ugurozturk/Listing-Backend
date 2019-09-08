@@ -16,7 +16,4 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="2.2.6" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Service\IService\" />
-  </ItemGroup>
 </Project>

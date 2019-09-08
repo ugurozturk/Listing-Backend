@@ -1,18 +1,15 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using System;
-using System.ComponentModel.DataAnnotations;
 using UOzturk.Listing.List;
 
-namespace UOzturk.Listing.SystemCreatedList.Dto
+namespace UOzturk.Listing.SystemCreatedListItem
 {
-    [AutoMapTo(typeof(SystemCreatedListItemEntity))]
-    public class CreateSystemCreatedListItemDto : EntityDto
+    [AutoMapFrom(typeof(SystemCreatedListItemEntity))]
+    public class SystemCreatedListItemDto : EntityDto
     {
-        [MaxLength(200)]
         public string Name { get; set; }
 
-        [MaxLength(500)]
         public string Link { get; set; }
 
         public DateTime ReleaseDate { get; set; }
@@ -25,6 +22,9 @@ namespace UOzturk.Listing.SystemCreatedList.Dto
 
         public bool IsVideo { get; set; }
 
+        //Bunu belki silebilirsin. Debug için koyuyorum.
         public int SystemCreatedListId { get; set; }
+
+        public SystemCreatedListEntity SystemCreatedList { get; set; }
     }
 }

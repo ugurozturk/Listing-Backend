@@ -3,7 +3,7 @@ using Abp.AutoMapper;
 using UOzturk.Listing.Authorization.Users;
 using UOzturk.Listing.List;
 
-namespace UOzturk.Listing.UserCreatedList.Dto
+namespace UOzturk.Listing.UserCreatedListItemTag
 {
     [AutoMapTo(typeof(UserCreatedListItemTagEntity))]
     public class CreateUserCreatedListItemTagDto

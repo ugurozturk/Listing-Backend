@@ -3,7 +3,7 @@ using Abp.AutoMapper;
 using UOzturk.Listing.Authorization.Users;
 using UOzturk.Listing.List;
 
-namespace UOzturk.Listing.UserCreatedList.Dto
+namespace UOzturk.Listing.UserCreatedListItem
 {
     [AutoMapFrom(typeof(UserCreatedListItemEntity))]
     public class UserCreatedListItemDto : EntityDto

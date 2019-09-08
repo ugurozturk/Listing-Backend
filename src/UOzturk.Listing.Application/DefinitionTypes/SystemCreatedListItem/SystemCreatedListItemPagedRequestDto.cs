@@ -3,7 +3,7 @@ using Abp.AutoMapper;
 using System;
 using UOzturk.Listing.List;
 
-namespace UOzturk.Listing.SystemCreatedList.Dto
+namespace UOzturk.Listing.SystemCreatedListItem
 {
     public class SystemCreatedListItemPagedRequestDto : PagedResultRequestDto
     {
