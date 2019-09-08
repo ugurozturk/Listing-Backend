@@ -19,7 +19,6 @@ namespace UOzturk.Listing.SystemCreatedList
     public class SystemCreatedListAppService : AsyncCrudAppService<SystemCreatedListEntity, SystemCreatedListDto, int, SystemCreatedListPagedRequestDto, CreateSystemCreatedListDto, UpdateSystemCreatedListDto>, ISystemCreatedListAppService
     {
         private readonly ISystemCreatedListFacade _systemCreatedListFacade;
-        private readonly IRepository<SystemCreatedListItemEntity, int> _systemCreatedListItemRepository;
         public SystemCreatedListAppService(
             IRepository<SystemCreatedListEntity, int> repository,
             ISystemCreatedListFacade systemCreatedListFacade
