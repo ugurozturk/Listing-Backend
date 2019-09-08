@@ -23,6 +23,5 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UOzturk.Listing.Core\UOzturk.Listing.Core.csproj" />
-    <ProjectReference Include="..\UOzturk.Listing.DefinitionTypes\UOzturk.Listing.DefinitionTypes.csproj" />
   </ItemGroup>
 </Project>

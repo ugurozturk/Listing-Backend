@@ -9,8 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UOzturk.Listing.Authorization;
-using UOzturk.Listing.DefinitionTypes.SystemCreatedList;
-using UOzturk.Listing.IManagers;
+using UOzturk.Listing.Facade.IFacade;
 using UOzturk.Listing.List;
 using UOzturk.Listing.ListType.Dto;
 using UOzturk.Listing.SystemCreatedList.Dto;
@@ -19,43 +18,19 @@ namespace UOzturk.Listing.SystemCreatedList
 {
     public class SystemCreatedListAppService : AsyncCrudAppService<SystemCreatedListEntity, SystemCreatedListDto, int, SystemCreatedListPagedRequestDto, CreateSystemCreatedListDto, UpdateSystemCreatedListDto>, ISystemCreatedListAppService
     {
-        private readonly ISystemCreatedListManager _systemCreatedListManager;
+        private readonly ISystemCreatedListFacade _systemCreatedListFacade;
         private readonly IRepository<SystemCreatedListItemEntity, int> _systemCreatedListItemRepository;
         public SystemCreatedListAppService(
             IRepository<SystemCreatedListEntity, int> repository,
-            ISystemCreatedListManager systemCreatedListManager
+            ISystemCreatedListFacade systemCreatedListFacade
             ) : base(repository)
         {
-            _systemCreatedListManager = systemCreatedListManager;
+            _systemCreatedListFacade = systemCreatedListFacade;
         }
 
         public List<SystemCreatedListDto> GetAllWithItems(SystemCreatedListPagedRequestDto input)
         {
-            var test = _systemCreatedListManager.GetAllWithItems(input)
-                .Select(x => new SystemCreatedListDto()
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    ListType = new ListTypeDto
-                    {
-                        Id = x.ListType.Id,
-                        Name = x.ListType.Name
-                    },
-                    SystemCreatedListItemCollection = x.SystemCreatedListItemCollection.Select(y => new SystemCreatedListItemDto()
-                    {
-                        Id = y.Id,
-                        Name = y.Name,
-                        Link = y.Link,
-                        IsPc = y.IsPc,
-                        IsPs = y.IsPs,
-                        IsVideo = y.IsVideo,
-                        IsXBox = y.IsXBox,
-                        ReleaseDate = y.ReleaseDate
-                    }).ToList()
-                }).ToList();
-
-
-            return test;
+            return _systemCreatedListFacade.GetAllWithItems(input);
         }
 
         //public IQueryable<SystemCreatedListItemEntity> QueryableSystemCreatedListItem(SystemCreatedListItemPagedRequestDto systemCreatedListItemPagedRequest)
