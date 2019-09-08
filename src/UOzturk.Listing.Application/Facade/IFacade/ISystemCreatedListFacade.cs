@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using UOzturk.Listing.SystemCreatedList.Dto;
+using UOzturk.Listing.SystemCreatedList;
 
 namespace UOzturk.Listing.Facade.IFacade
 {

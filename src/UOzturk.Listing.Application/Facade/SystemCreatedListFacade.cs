@@ -2,7 +2,7 @@
 using System.Linq;
 using UOzturk.Listing.IRepositories;
 using UOzturk.Listing.ListType.Dto;
-using UOzturk.Listing.SystemCreatedList.Dto;
+using UOzturk.Listing.SystemCreatedList;
 using UOzturk.Listing.SystemCreatedListItem;
 
 namespace UOzturk.Listing.Facade.IFacade

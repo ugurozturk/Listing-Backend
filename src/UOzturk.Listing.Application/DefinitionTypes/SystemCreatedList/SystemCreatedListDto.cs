@@ -5,7 +5,7 @@ using UOzturk.Listing.List;
 using UOzturk.Listing.ListType.Dto;
 using UOzturk.Listing.SystemCreatedListItem;
 
-namespace UOzturk.Listing.SystemCreatedList.Dto
+namespace UOzturk.Listing.SystemCreatedList
 {
     [AutoMapFrom(typeof(SystemCreatedListEntity))]
     public class SystemCreatedListDto : EntityDto

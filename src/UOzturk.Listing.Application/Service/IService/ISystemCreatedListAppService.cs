@@ -1,6 +1,5 @@
 ﻿using Abp.Application.Services;
 using System.Collections.Generic;
-using UOzturk.Listing.SystemCreatedList.Dto;
 
 namespace UOzturk.Listing.SystemCreatedList
 {

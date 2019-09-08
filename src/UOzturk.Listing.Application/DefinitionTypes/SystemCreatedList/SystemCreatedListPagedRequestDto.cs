@@ -1,6 +1,6 @@
 ﻿using Abp.Application.Services.Dto;
 
-namespace UOzturk.Listing.SystemCreatedList.Dto
+namespace UOzturk.Listing.SystemCreatedList
 {
     public class SystemCreatedListPagedRequestDto : PagedResultRequestDto
     {

@@ -3,7 +3,7 @@ using Abp.AutoMapper;
 using System.ComponentModel.DataAnnotations;
 using UOzturk.Listing.List;
 
-namespace UOzturk.Listing.SystemCreatedList.Dto
+namespace UOzturk.Listing.SystemCreatedList
 {
     [AutoMapTo(typeof(SystemCreatedListEntity))]
     public class UpdateSystemCreatedListDto : EntityDto

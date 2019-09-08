@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UOzturk.Listing.List;
 
-namespace UOzturk.Listing.SystemCreatedList.Dto
+namespace UOzturk.Listing.SystemCreatedList
 {
     public class SystemCreatedListExtDto
     {
