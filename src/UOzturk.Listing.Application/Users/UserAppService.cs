@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Abp.Application.Services;
+﻿using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.Domain.Entities;
@@ -13,14 +9,18 @@ using Abp.Linq.Extensions;
 using Abp.Localization;
 using Abp.Runtime.Session;
 using Abp.UI;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using UOzturk.Listing.Authorization;
 using UOzturk.Listing.Authorization.Accounts;
 using UOzturk.Listing.Authorization.Roles;
 using UOzturk.Listing.Authorization.Users;
 using UOzturk.Listing.Roles.Dto;
 using UOzturk.Listing.Users.Dto;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 
 namespace UOzturk.Listing.Users
 {
@@ -218,7 +218,5 @@ namespace UOzturk.Listing.Users
 
             return true;
         }
-
     }
 }
-

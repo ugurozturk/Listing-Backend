@@ -1,7 +1,5 @@
 ﻿using Abp.Application.Services.Dto;
-using Abp.AutoMapper;
 using System;
-using UOzturk.Listing.List;
 
 namespace UOzturk.Listing.SystemCreatedListItem
 {

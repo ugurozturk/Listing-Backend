@@ -7,4 +7,3 @@ namespace UOzturk.Listing.Roles.Dto
         public string Keyword { get; set; }
     }
 }
-

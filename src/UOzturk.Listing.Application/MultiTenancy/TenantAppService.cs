@@ -1,6 +1,4 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using Abp.Application.Services;
+﻿using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.Domain.Repositories;
@@ -9,12 +7,14 @@ using Abp.IdentityFramework;
 using Abp.Linq.Extensions;
 using Abp.MultiTenancy;
 using Abp.Runtime.Security;
+using Microsoft.AspNetCore.Identity;
+using System.Linq;
+using System.Threading.Tasks;
 using UOzturk.Listing.Authorization;
 using UOzturk.Listing.Authorization.Roles;
 using UOzturk.Listing.Authorization.Users;
 using UOzturk.Listing.Editions;
 using UOzturk.Listing.MultiTenancy.Dto;
-using Microsoft.AspNetCore.Identity;
 
 namespace UOzturk.Listing.MultiTenancy
 {
@@ -120,4 +120,3 @@ namespace UOzturk.Listing.MultiTenancy
         }
     }
 }
-

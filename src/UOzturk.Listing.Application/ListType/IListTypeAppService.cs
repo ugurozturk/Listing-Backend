@@ -1,5 +1,4 @@
 ﻿using Abp.Application.Services;
-using Abp.Application.Services.Dto;
 using UOzturk.Listing.ListType.Dto;
 
 namespace UOzturk.Listing.ListType
@@ -8,4 +7,3 @@ namespace UOzturk.Listing.ListType
     {
     }
 }
-

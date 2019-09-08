@@ -1,7 +1,7 @@
-using System.Linq;
-using AutoMapper;
 using Abp.Authorization;
 using Abp.Authorization.Roles;
+using AutoMapper;
+using System.Linq;
 using UOzturk.Listing.Authorization.Roles;
 
 namespace UOzturk.Listing.Roles.Dto

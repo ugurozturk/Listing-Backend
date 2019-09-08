@@ -8,4 +8,3 @@ namespace UOzturk.Listing.MultiTenancy.Dto
         public bool? IsActive { get; set; }
     }
 }
-

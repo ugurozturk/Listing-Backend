@@ -6,7 +6,7 @@ using UOzturk.Listing.Authorization;
 namespace UOzturk.Listing
 {
     [DependsOn(
-        typeof(ListingCoreModule), 
+        typeof(ListingCoreModule),
         typeof(AbpAutoMapperModule))]
     public class ListingApplicationModule : AbpModule
     {

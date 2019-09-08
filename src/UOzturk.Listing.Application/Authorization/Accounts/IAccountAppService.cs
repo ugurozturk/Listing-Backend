@@ -1,5 +1,5 @@
-﻿using System.Threading.Tasks;
-using Abp.Application.Services;
+﻿using Abp.Application.Services;
+using System.Threading.Tasks;
 using UOzturk.Listing.Authorization.Accounts.Dto;
 
 namespace UOzturk.Listing.Authorization.Accounts

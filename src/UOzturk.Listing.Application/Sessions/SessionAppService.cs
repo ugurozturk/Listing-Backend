@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Abp.Auditing;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using Abp.Auditing;
 using UOzturk.Listing.Sessions.Dto;
 
 namespace UOzturk.Listing.Sessions

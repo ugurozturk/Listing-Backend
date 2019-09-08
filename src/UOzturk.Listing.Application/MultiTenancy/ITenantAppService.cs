@@ -1,5 +1,4 @@
 ﻿using Abp.Application.Services;
-using Abp.Application.Services.Dto;
 using UOzturk.Listing.MultiTenancy.Dto;
 
 namespace UOzturk.Listing.MultiTenancy
@@ -8,4 +7,3 @@ namespace UOzturk.Listing.MultiTenancy
     {
     }
 }
-

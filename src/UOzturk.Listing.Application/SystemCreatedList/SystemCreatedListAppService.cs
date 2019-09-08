@@ -1,17 +1,8 @@
 ﻿using Abp.Application.Services;
-using Abp.Authorization;
 using Abp.Domain.Repositories;
-using Abp.Extensions;
-using Abp.Linq.Extensions;
-using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using UOzturk.Listing.Authorization;
 using UOzturk.Listing.Facade.IFacade;
 using UOzturk.Listing.List;
-using UOzturk.Listing.ListType.Dto;
 using UOzturk.Listing.SystemCreatedList.Dto;
 
 namespace UOzturk.Listing.SystemCreatedList
@@ -19,6 +10,7 @@ namespace UOzturk.Listing.SystemCreatedList
     public class SystemCreatedListAppService : AsyncCrudAppService<SystemCreatedListEntity, SystemCreatedListDto, int, SystemCreatedListPagedRequestDto, CreateSystemCreatedListDto, UpdateSystemCreatedListDto>, ISystemCreatedListAppService
     {
         private readonly ISystemCreatedListFacade _systemCreatedListFacade;
+
         public SystemCreatedListAppService(
             IRepository<SystemCreatedListEntity, int> repository,
             ISystemCreatedListFacade systemCreatedListFacade

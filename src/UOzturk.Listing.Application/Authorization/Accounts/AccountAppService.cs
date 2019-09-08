@@ -1,6 +1,6 @@
-using System.Threading.Tasks;
 using Abp.Configuration;
 using Abp.Zero.Configuration;
+using System.Threading.Tasks;
 using UOzturk.Listing.Authorization.Accounts.Dto;
 using UOzturk.Listing.Authorization.Users;
 

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
-using Abp.Application.Services;
+﻿using Abp.Application.Services;
 using Abp.IdentityFramework;
 using Abp.Runtime.Session;
+using Microsoft.AspNetCore.Identity;
+using System;
+using System.Threading.Tasks;
 using UOzturk.Listing.Authorization.Users;
 using UOzturk.Listing.MultiTenancy;
 
