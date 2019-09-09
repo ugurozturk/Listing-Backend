@@ -11,9 +11,7 @@ namespace UOzturk.Listing.UserCreatedList
         public string Name { get; set; }
 
         public int ListTypeId { get; set; }
-
-        public long ListOwnerUserId { get; set; }
-
+        
         public User User { get; set; }
 
         public ListTypeEntity ListType { get; set; }
