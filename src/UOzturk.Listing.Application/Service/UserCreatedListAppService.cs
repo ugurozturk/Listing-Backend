@@ -19,10 +19,10 @@ namespace UOzturk.Listing.UserCreatedList
         }
 
         [AbpAuthorize]
-        public override Task<UserCreatedListDto> Create(CreateUserCreatedListDto input)
+        public override async Task<UserCreatedListDto> Create(CreateUserCreatedListDto input)
         {
             input.ListOwnerUserId = _session.UserId ?? 1;
-            return base.Create(input);
+            return await base.Create(input);
         }
     }
 }
