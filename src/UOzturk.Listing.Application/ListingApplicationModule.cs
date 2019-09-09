@@ -1,7 +1,10 @@
 ﻿using Abp.AutoMapper;
+using Abp.Dependency;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using UOzturk.Listing.Authorization;
+using UOzturk.Listing.Facade;
+using UOzturk.Listing.Facade.IFacade;
 
 namespace UOzturk.Listing
 {
@@ -13,6 +16,7 @@ namespace UOzturk.Listing
         public override void PreInitialize()
         {
             Configuration.Authorization.Providers.Add<ListingAuthorizationProvider>();
+            IocManager.Register<ISystemCreatedListFacade, SystemCreatedListFacade>(DependencyLifeStyle.Transient);
         }
 
         public override void Initialize()

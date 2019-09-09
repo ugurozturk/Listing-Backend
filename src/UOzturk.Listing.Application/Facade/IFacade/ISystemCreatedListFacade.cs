@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Abp.Dependency;
+using System.Collections.Generic;
 using UOzturk.Listing.SystemCreatedList;
 
 namespace UOzturk.Listing.Facade.IFacade

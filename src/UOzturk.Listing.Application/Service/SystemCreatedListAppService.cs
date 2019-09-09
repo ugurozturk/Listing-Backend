@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services;
+using Abp.Dependency;
 using Abp.Domain.Repositories;
 using System.Collections.Generic;
 using UOzturk.Listing.Facade.IFacade;
