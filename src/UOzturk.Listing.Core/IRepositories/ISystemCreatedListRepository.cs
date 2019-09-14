@@ -7,6 +7,6 @@ namespace UOzturk.Listing.IRepositories
 {
     public interface ISystemCreatedListRepository : IRepository<SystemCreatedListEntity>
     {
-        IQueryable<SystemCreatedListEntity> GetAllWithItems(int? listTypeId);
+        IQueryable<SystemCreatedListEntity> GetAllWithItems(int? listTypeId = null);
     }
 }

@@ -23,5 +23,15 @@ namespace UOzturk.Listing.SystemCreatedList
         {
             return _systemCreatedListFacade.GetAllWithItems(input);
         }
+
+        public int GetListsCount()
+        {
+            return _systemCreatedListFacade.GetListsCount();
+        }
+
+        public int GetItemsCount()
+        {
+            return _systemCreatedListFacade.GetItemsCount();
+        }
     }
 }

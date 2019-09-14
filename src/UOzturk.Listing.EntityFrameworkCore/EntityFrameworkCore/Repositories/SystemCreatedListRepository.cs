@@ -20,7 +20,7 @@ namespace UOzturk.Listing.EntityFrameworkCore.Repositories
         /// </summary>
         /// <param name="ListTypeId"></param>
         /// <returns></returns>
-        public IQueryable<SystemCreatedListEntity> GetAllWithItems(int? listTypeId)
+        public IQueryable<SystemCreatedListEntity> GetAllWithItems(int? listTypeId = null)
         {
             var query = GetAll();
 

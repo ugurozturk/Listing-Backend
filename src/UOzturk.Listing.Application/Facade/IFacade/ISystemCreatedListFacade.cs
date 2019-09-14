@@ -4,8 +4,12 @@ using UOzturk.Listing.SystemCreatedList;
 
 namespace UOzturk.Listing.Facade.IFacade
 {
-    public interface ISystemCreatedListFacade
+    public interface ISystemCreatedListFacade : IApplicationFacade
     {
         List<SystemCreatedListDto> GetAllWithItems(SystemCreatedListPagedRequestDto input);
+        
+        int GetListsCount();
+
+        int GetItemsCount();
     }
 }

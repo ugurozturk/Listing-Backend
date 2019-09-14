@@ -16,7 +16,7 @@ namespace UOzturk.Listing
         public override void PreInitialize()
         {
             Configuration.Authorization.Providers.Add<ListingAuthorizationProvider>();
-            IocManager.Register<ISystemCreatedListFacade, SystemCreatedListFacade>(DependencyLifeStyle.Transient);
+            //IocManager.Register<ISystemCreatedListFacade, SystemCreatedListFacade>(DependencyLifeStyle.Transient);
         }
 
         public override void Initialize()

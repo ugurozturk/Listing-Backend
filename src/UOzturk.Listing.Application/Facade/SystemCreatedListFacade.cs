@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Abp.Domain.Repositories;
+using System.Collections.Generic;
 using System.Linq;
 using UOzturk.Listing.Facade.IFacade;
 using UOzturk.Listing.IRepositories;
+using UOzturk.Listing.List;
 using UOzturk.Listing.ListType;
 using UOzturk.Listing.SystemCreatedList;
 using UOzturk.Listing.SystemCreatedListItem;
@@ -11,10 +13,13 @@ namespace UOzturk.Listing.Facade
     public class SystemCreatedListFacade : ISystemCreatedListFacade
     {
         private readonly ISystemCreatedListRepository _systemCreatedListRepository;
+        private readonly IRepository<SystemCreatedListItemEntity, int> _systemCreatedListItemRepository;
 
-        public SystemCreatedListFacade(ISystemCreatedListRepository systemCreatedListRepository)
+        public SystemCreatedListFacade(ISystemCreatedListRepository systemCreatedListRepository, 
+            IRepository<SystemCreatedListItemEntity, int> systemCreatedListItemRepository)
         {
             _systemCreatedListRepository = systemCreatedListRepository;
+            _systemCreatedListItemRepository = systemCreatedListItemRepository;
         }
 
         public List<SystemCreatedListDto> GetAllWithItems(SystemCreatedListPagedRequestDto input)
@@ -43,6 +48,16 @@ namespace UOzturk.Listing.Facade
                 }).Skip(input.SkipCount).Take(input.MaxResultCount).ToList();
 
             return test;
+        }
+
+        public int GetListsCount()
+        {
+            return _systemCreatedListRepository.Count();
+        }
+
+        public int GetItemsCount()
+        {
+            return _systemCreatedListItemRepository.Count();
         }
     }
 }
