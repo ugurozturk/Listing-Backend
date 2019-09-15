@@ -50,7 +50,7 @@ namespace UOzturk.Listing.Facade
                         IsVideo = y.IsVideo,
                         IsXBox = y.IsXBox,
                         ReleaseDate = y.ReleaseDate
-                    }).Skip(input.SkipCount).Take(input.MaxResultCount).ToList())
+                    }).OrderByDescending(y=>y.Id).Skip(input.SkipCount).Take(input.MaxResultCount).ToList())
                 });
 
             var test2 = test.ToList();

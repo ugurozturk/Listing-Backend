@@ -22,9 +22,6 @@ namespace UOzturk.Listing.Web.Host.Controllers
 
         public IActionResult Index()
         {
-            var test = _systemCreatedListManager.GetAllWithItems(new SystemCreatedListPagedRequestDto(){ 
-                MaxResultCount = 3
-                });
             return Redirect("/swagger");
         }
 
