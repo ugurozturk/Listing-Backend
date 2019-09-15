@@ -1,7 +1,10 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
-using UOzturk.Listing.Authorization.Users;
+using System.Collections.Generic;
 using UOzturk.Listing.List;
+using UOzturk.Listing.ListType;
+using UOzturk.Listing.UserCreatedListItem;
+using UOzturk.Listing.Users.Dto;
 
 namespace UOzturk.Listing.UserCreatedList
 {
@@ -9,11 +12,11 @@ namespace UOzturk.Listing.UserCreatedList
     public class UserCreatedListDto : EntityDto
     {
         public string Name { get; set; }
-
-        public int ListTypeId { get; set; }
         
-        public User User { get; set; }
+        public UserDto User { get; set; }
 
-        public ListTypeEntity ListType { get; set; }
+        public ListTypeDto ListType { get; set; }
+
+        public PagedResultDto<UserCreatedListItemDto> UserCreatedListItemCollection { get; set; }
     }
 }

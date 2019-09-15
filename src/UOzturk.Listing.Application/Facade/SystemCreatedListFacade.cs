@@ -1,4 +1,7 @@
-﻿using Abp.Domain.Repositories;
+﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
+using Abp.Domain.Repositories;
+using Abp.ObjectMapping;
 using System.Collections.Generic;
 using System.Linq;
 using UOzturk.Listing.Facade.IFacade;
@@ -14,12 +17,15 @@ namespace UOzturk.Listing.Facade
     {
         private readonly ISystemCreatedListRepository _systemCreatedListRepository;
         private readonly IRepository<SystemCreatedListItemEntity, int> _systemCreatedListItemRepository;
+        private readonly IObjectMapper _objectMapper;
 
         public SystemCreatedListFacade(ISystemCreatedListRepository systemCreatedListRepository, 
-            IRepository<SystemCreatedListItemEntity, int> systemCreatedListItemRepository)
+            IRepository<SystemCreatedListItemEntity, int> systemCreatedListItemRepository,
+            IObjectMapper objectMapper)
         {
             _systemCreatedListRepository = systemCreatedListRepository;
             _systemCreatedListItemRepository = systemCreatedListItemRepository;
+            _objectMapper = objectMapper;
         }
 
         public List<SystemCreatedListDto> GetAllWithItems(SystemCreatedListPagedRequestDto input)
@@ -34,7 +40,7 @@ namespace UOzturk.Listing.Facade
                         Id = x.ListType.Id,
                         Name = x.ListType.Name
                     },
-                    SystemCreatedListItemCollection = x.SystemCreatedListItemCollection.Select(y => new SystemCreatedListItemDto()
+                    SystemCreatedListItemCollection = new PagedResultDto<SystemCreatedListItemDto>(x.SystemCreatedListItemCollection.Count, x.SystemCreatedListItemCollection.Select(y => new SystemCreatedListItemDto()
                     {
                         Id = y.Id,
                         Name = y.Name,
@@ -44,10 +50,12 @@ namespace UOzturk.Listing.Facade
                         IsVideo = y.IsVideo,
                         IsXBox = y.IsXBox,
                         ReleaseDate = y.ReleaseDate
-                    }).ToList()
-                }).Skip(input.SkipCount).Take(input.MaxResultCount).ToList();
+                    }).Skip(input.SkipCount).Take(input.MaxResultCount).ToList())
+                });
 
-            return test;
+            var test2 = test.ToList();
+
+            return test2;
         }
 
         public int GetListsCount()

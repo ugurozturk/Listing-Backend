@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Abp.Application.Services.Dto;
+using System.Collections.Generic;
 using UOzturk.Listing.List;
+using UOzturk.Listing.ListType;
+using UOzturk.Listing.SystemCreatedListItem;
 
 namespace UOzturk.Listing.SystemCreatedList
 {
@@ -9,8 +12,8 @@ namespace UOzturk.Listing.SystemCreatedList
 
         public int ListTypeId { get; set; }
 
-        public ListTypeEntity ListType { get; set; }
+        public ListTypeDto ListType { get; set; }
 
-        public IList<SystemCreatedListItemEntity> SystemCreatedListItemCollection { get; set; }
+        public PagedResultDto<SystemCreatedListItemDto> SystemCreatedListItemCollection { get; set; }
     }
 }

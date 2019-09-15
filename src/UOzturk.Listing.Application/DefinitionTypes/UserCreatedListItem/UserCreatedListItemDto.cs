@@ -1,6 +1,10 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
+using System.Collections.Generic;
 using UOzturk.Listing.List;
+using UOzturk.Listing.SystemCreatedListItem;
+using UOzturk.Listing.UserCreatedList;
+using UOzturk.Listing.UserCreatedListItemTag;
 
 namespace UOzturk.Listing.UserCreatedListItem
 {
@@ -11,12 +15,10 @@ namespace UOzturk.Listing.UserCreatedListItem
 
         public short Score { get; set; }
 
-        public int? UserCreatedListId { get; set; }
+        public UserCreatedListDto UserCreatedList { get; set; }
 
-        public int SystemCreatedListItemId { get; set; }
+        public SystemCreatedListItemDto SystemCreatedListItem { get; set; }
 
-        public UserCreatedListEntity UserCreatedList { get; set; }
-
-        public SystemCreatedListItemEntity SystemCreatedListItem { get; set; }
+        public List<UserCreatedListItemTagDto> UserCreatedListItemTagCollection { get;set;}
     }
 }

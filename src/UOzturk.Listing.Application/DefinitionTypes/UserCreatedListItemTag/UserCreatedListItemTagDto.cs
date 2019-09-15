@@ -1,6 +1,7 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using UOzturk.Listing.List;
+using UOzturk.Listing.UserCreatedListItem;
 
 namespace UOzturk.Listing.UserCreatedListItemTag
 {
@@ -9,8 +10,6 @@ namespace UOzturk.Listing.UserCreatedListItemTag
     {
         public string Name { get; set; }
 
-        public int UserCreatedListItemId { get; set; }
-
-        public UserCreatedListItemEntity UserCreatedListItem { get; set; }
+        public UserCreatedListItemDto UserCreatedListItem { get; set; }
     }
 }

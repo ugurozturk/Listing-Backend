@@ -14,6 +14,6 @@ namespace UOzturk.Listing.SystemCreatedList
 
         public ListTypeDto ListType { get; set; }
 
-        public List<SystemCreatedListItemDto> SystemCreatedListItemCollection { get; set; }
+        public PagedResultDto<SystemCreatedListItemDto> SystemCreatedListItemCollection { get; set; }
     }
 }
