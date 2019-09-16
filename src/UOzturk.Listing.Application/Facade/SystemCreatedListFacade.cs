@@ -1,5 +1,4 @@
 ﻿using Abp.Application.Services.Dto;
-using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Abp.ObjectMapping;
 using System.Collections.Generic;
@@ -17,15 +16,12 @@ namespace UOzturk.Listing.Facade
     {
         private readonly ISystemCreatedListRepository _systemCreatedListRepository;
         private readonly IRepository<SystemCreatedListItemEntity, int> _systemCreatedListItemRepository;
-        private readonly IObjectMapper _objectMapper;
 
-        public SystemCreatedListFacade(ISystemCreatedListRepository systemCreatedListRepository, 
-            IRepository<SystemCreatedListItemEntity, int> systemCreatedListItemRepository,
-            IObjectMapper objectMapper)
+        public SystemCreatedListFacade(ISystemCreatedListRepository systemCreatedListRepository,
+            IRepository<SystemCreatedListItemEntity, int> systemCreatedListItemRepository)
         {
             _systemCreatedListRepository = systemCreatedListRepository;
             _systemCreatedListItemRepository = systemCreatedListItemRepository;
-            _objectMapper = objectMapper;
         }
 
         public List<SystemCreatedListDto> GetAllWithItems(SystemCreatedListPagedRequestDto input)
@@ -50,7 +46,7 @@ namespace UOzturk.Listing.Facade
                         IsVideo = y.IsVideo,
                         IsXBox = y.IsXBox,
                         ReleaseDate = y.ReleaseDate
-                    }).OrderByDescending(y=>y.Id).Skip(input.SkipCount).Take(input.MaxResultCount).ToList())
+                    }).OrderByDescending(y => y.Id).Skip(input.SkipCount).Take(input.MaxResultCount).ToList())
                 });
 
             var test2 = test.ToList();
