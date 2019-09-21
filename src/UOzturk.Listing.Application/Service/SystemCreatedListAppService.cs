@@ -2,6 +2,7 @@
 using Abp.Dependency;
 using Abp.Domain.Repositories;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UOzturk.Listing.Facade.IFacade;
 using UOzturk.Listing.List;
 
@@ -19,9 +20,9 @@ namespace UOzturk.Listing.SystemCreatedList
             _systemCreatedListFacade = systemCreatedListFacade;
         }
 
-        public List<SystemCreatedListDto> GetAllWithItems(SystemCreatedListPagedRequestDto input)
+        public async Task<List<SystemCreatedListPagedItemsDto>> GetAllWithItems(SystemCreatedListPagedRequestDto input)
         {
-            return _systemCreatedListFacade.GetAllWithItems(input);
+            return await _systemCreatedListFacade.GetAllWithItems(input);
         }
 
         public int GetListsCount()

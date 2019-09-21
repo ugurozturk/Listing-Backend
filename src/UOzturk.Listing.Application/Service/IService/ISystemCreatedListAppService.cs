@@ -1,11 +1,12 @@
 ﻿using Abp.Application.Services;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace UOzturk.Listing.SystemCreatedList
 {
     public interface ISystemCreatedListAppService : IAsyncCrudAppService<SystemCreatedListDto, int, SystemCreatedListPagedRequestDto, CreateSystemCreatedListDto, UpdateSystemCreatedListDto>
     {
-        List<SystemCreatedListDto> GetAllWithItems(SystemCreatedListPagedRequestDto input);
+        Task<List<SystemCreatedListPagedItemsDto>> GetAllWithItems(SystemCreatedListPagedRequestDto input);
 
         int GetListsCount();
 

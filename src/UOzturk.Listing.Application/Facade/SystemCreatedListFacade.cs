@@ -1,8 +1,10 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
 using Abp.ObjectMapping;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UOzturk.Listing.Facade.IFacade;
 using UOzturk.Listing.IRepositories;
 using UOzturk.Listing.List;
@@ -24,10 +26,10 @@ namespace UOzturk.Listing.Facade
             _systemCreatedListItemRepository = systemCreatedListItemRepository;
         }
 
-        public List<SystemCreatedListDto> GetAllWithItems(SystemCreatedListPagedRequestDto input)
+        public async Task<List<SystemCreatedListPagedItemsDto>> GetAllWithItems(SystemCreatedListPagedRequestDto input)
         {
-            var test = _systemCreatedListRepository.GetAllWithItems(input.ListTypeId)
-                .Select(x => new SystemCreatedListDto()
+            return await _systemCreatedListRepository.GetAllWithItems(input.ListTypeId)
+                .Select(x => new SystemCreatedListPagedItemsDto()
                 {
                     Id = x.Id,
                     Name = x.Name,
@@ -46,12 +48,8 @@ namespace UOzturk.Listing.Facade
                         IsVideo = y.IsVideo,
                         IsXBox = y.IsXBox,
                         ReleaseDate = y.ReleaseDate
-                    }).OrderByDescending(y => y.Id).Skip(input.SkipCount).Take(input.MaxResultCount).ToList())
-                });
-
-            var test2 = test.ToList();
-
-            return test2;
+                    }).OrderBy(y => y.Id).Skip(input.SkipCount).Take(input.MaxResultCount).ToList())
+                }).ToListAsync();
         }
 
         public int GetListsCount()

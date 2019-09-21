@@ -7,13 +7,12 @@ using UOzturk.Listing.SystemCreatedListItem;
 
 namespace UOzturk.Listing.SystemCreatedList
 {
-    [AutoMapFrom(typeof(SystemCreatedListEntity))]
-    public class SystemCreatedListDto : EntityDto
+    public class SystemCreatedListPagedItemsDto : EntityDto
     {
         public string Name { get; set; }
 
         public ListTypeDto ListType { get; set; }
 
-        //public List<SystemCreatedListItemDto> SystemCreatedListItemCollection { get; set; }
+        public PagedResultDto<SystemCreatedListItemDto> SystemCreatedListItemCollection { get; set; }
     }
 }
