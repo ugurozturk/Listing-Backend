@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services;
+using Abp.Application.Services.Dto;
 using Abp.Dependency;
 using Abp.Domain.Repositories;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace UOzturk.Listing.SystemCreatedList
             _systemCreatedListFacade = systemCreatedListFacade;
         }
 
-        public async Task<List<SystemCreatedListPagedItemsDto>> GetAllWithItems(SystemCreatedListPagedRequestDto input)
+        public async Task<PagedResultDto<SystemCreatedListPagedItemsDto>> GetAllWithItems(SystemCreatedListPagedRequestDto input)
         {
             return await _systemCreatedListFacade.GetAllWithItems(input);
         }

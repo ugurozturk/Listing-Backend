@@ -26,9 +26,10 @@ namespace UOzturk.Listing.Facade
             _systemCreatedListItemRepository = systemCreatedListItemRepository;
         }
 
-        public async Task<List<SystemCreatedListPagedItemsDto>> GetAllWithItems(SystemCreatedListPagedRequestDto input)
+        public async Task<PagedResultDto<SystemCreatedListPagedItemsDto>> GetAllWithItems(SystemCreatedListPagedRequestDto input)
         {
-            return await _systemCreatedListRepository.GetAllWithItems(input.ListTypeId)
+            var res = await _systemCreatedListRepository.GetAllWithItems(input.ListTypeId)
+                .OrderBy(x => x.Id)
                 .Select(x => new SystemCreatedListPagedItemsDto()
                 {
                     Id = x.Id,
@@ -38,18 +39,25 @@ namespace UOzturk.Listing.Facade
                         Id = x.ListType.Id,
                         Name = x.ListType.Name
                     },
-                    SystemCreatedListItemCollection = new PagedResultDto<SystemCreatedListItemDto>(x.SystemCreatedListItemCollection.Count, x.SystemCreatedListItemCollection.Select(y => new SystemCreatedListItemDto()
-                    {
-                        Id = y.Id,
-                        Name = y.Name,
-                        Link = y.Link,
-                        IsPc = y.IsPc,
-                        IsPs = y.IsPs,
-                        IsVideo = y.IsVideo,
-                        IsXBox = y.IsXBox,
-                        ReleaseDate = y.ReleaseDate
-                    }).OrderBy(y => y.Id).Skip(input.SkipCount).Take(input.MaxResultCount).ToList())
+                    SystemCreatedListItemCollection = new PagedResultDto<SystemCreatedListItemDto>(x.SystemCreatedListItemCollection.Count,
+                        x.SystemCreatedListItemCollection
+                        .OrderBy(y => y.Id)
+                        .Skip(input.SkipCount)
+                        .Take(input.MaxResultCount)
+                        .Select(y => new SystemCreatedListItemDto()
+                        {
+                            Id = y.Id,
+                            Name = y.Name,
+                            Link = y.Link,
+                            IsPc = y.IsPc,
+                            IsPs = y.IsPs,
+                            IsVideo = y.IsVideo,
+                            IsXBox = y.IsXBox,
+                            ReleaseDate = y.ReleaseDate
+                        }).ToList())
                 }).ToListAsync();
+
+            return new PagedResultDto<SystemCreatedListPagedItemsDto>(res.Count(), res);
         }
 
         public int GetListsCount()
