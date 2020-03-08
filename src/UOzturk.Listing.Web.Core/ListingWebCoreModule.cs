@@ -12,6 +12,7 @@ using Abp.Zero.Configuration;
 using UOzturk.Listing.Authentication.JwtBearer;
 using UOzturk.Listing.Configuration;
 using UOzturk.Listing.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
 
 namespace UOzturk.Listing
 {
@@ -23,10 +24,10 @@ namespace UOzturk.Listing
      )]
     public class ListingWebCoreModule : AbpModule
     {
-        private readonly IHostingEnvironment _env;
+        private readonly IWebHostEnvironment _env;
         private readonly IConfigurationRoot _appConfiguration;
 
-        public ListingWebCoreModule(IHostingEnvironment env)
+        public ListingWebCoreModule(IWebHostEnvironment env)
         {
             _env = env;
             _appConfiguration = env.GetAppConfiguration();
@@ -64,6 +65,12 @@ namespace UOzturk.Listing
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(typeof(ListingWebCoreModule).GetAssembly());
+        }
+
+        public override void PostInitialize()
+        {
+            IocManager.Resolve<ApplicationPartManager>()
+                .AddApplicationPartsIfNotAddedBefore(typeof(ListingWebCoreModule).Assembly);
         }
     }
 }

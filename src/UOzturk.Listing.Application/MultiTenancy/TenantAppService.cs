@@ -43,7 +43,7 @@ namespace UOzturk.Listing.MultiTenancy
             _abpZeroDbMigrator = abpZeroDbMigrator;
         }
 
-        public override async Task<TenantDto> Create(CreateTenantDto input)
+        public override async Task<TenantDto> CreateAsync(CreateTenantDto input)
         {
             CheckCreatePermission();
 
@@ -106,7 +106,7 @@ namespace UOzturk.Listing.MultiTenancy
             entity.IsActive = updateInput.IsActive;
         }
 
-        public override async Task Delete(EntityDto<int> input)
+        public override async Task DeleteAsync(EntityDto<int> input)
         {
             CheckDeletePermission();
 
