@@ -4,6 +4,7 @@ using Abp;
 using Abp.Extensions;
 using Abp.Notifications;
 using Abp.Timing;
+using Abp.Web.Security.AntiForgery;
 using UOzturk.Listing.Controllers;
 
 namespace UOzturk.Listing.Web.Host.Controllers
