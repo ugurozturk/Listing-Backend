@@ -250,3 +250,10 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+.vscode/launch.json
+.vscode/tasks.json
+src/UOzturk.Listing.Migrator/appsettings.json
+src/UOzturk.Listing.Migrator/Logs/Logs.txt
+src/UOzturk.Listing.Web.Host/App_Data/Logs/Logs.txt
+src/UOzturk.Listing.Web.Host/appsettings.Staging.json
+src/UOzturk.Listing.Web.Host/appsettings.json
