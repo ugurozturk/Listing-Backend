@@ -20,10 +20,10 @@ namespace UOzturk.Listing.EntityFrameworkCore.Seed.Host
         {
             int? tenantId = null;
 
-            if (ListingConsts.MultiTenancyEnabled == false)
-            {
-                tenantId = MultiTenancyConsts.DefaultTenantId;
-            }
+            // if (ListingConsts.MultiTenancyEnabled == false)
+            // {
+            //     tenantId = MultiTenancyConsts.DefaultTenantId;
+            // }
 
             // Emailing
             AddSettingIfNotExists(EmailSettingNames.DefaultFromAddress, "admin@mydomain.com", tenantId);

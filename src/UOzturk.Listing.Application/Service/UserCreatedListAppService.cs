@@ -3,7 +3,6 @@ using Abp.Application.Services;
 using Abp.Authorization;
 using Abp.Domain.Repositories;
 using Abp.Runtime.Session;
-using UOzturk.Listing.Authorization;
 using UOzturk.Listing.List;
 
 namespace UOzturk.Listing.UserCreatedList
