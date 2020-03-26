@@ -11,5 +11,12 @@
         public const string DefaultListType = "Genel";
         public const string DefaultUserCreatedListName = "Genel";
         public const string DefaultUserName = "admin";
+
+        public const string MovieListType = "Movie";
+        public const string TvSeriesListType = "TvSeries";
+        public const string AnimeListType = "Anime";
+        public const string MangaListType = "Manga";
+        public const string TodoListType = "Manga";
+        
     }
 }
