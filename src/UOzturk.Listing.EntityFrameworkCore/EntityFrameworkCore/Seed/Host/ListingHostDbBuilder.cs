@@ -14,7 +14,10 @@ namespace UOzturk.Listing.EntityFrameworkCore.Seed.Host
         public void Create()
         {
             new ListTypeCreator(_context).Create();
+            new SystemCreatedListCreator(_context).Create();
+            new SystemCreatedListItemCreator(_context).Create();
             new UserCreatedListCreator(_context).Create();
+            new UserCreatedListItemCreator(_context).Create();
 
             _context.SaveChanges();
         }
