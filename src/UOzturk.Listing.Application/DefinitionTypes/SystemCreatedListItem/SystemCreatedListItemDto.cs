@@ -2,6 +2,7 @@
 using Abp.AutoMapper;
 using System;
 using UOzturk.Listing.List;
+using UOzturk.Listing.SystemCreatedList;
 
 namespace UOzturk.Listing.SystemCreatedListItem
 {
@@ -25,6 +26,6 @@ namespace UOzturk.Listing.SystemCreatedListItem
         //Bunu belki silebilirsin. Debug için koyuyorum.
         public int SystemCreatedListId { get; set; }
 
-        public SystemCreatedListEntity SystemCreatedList { get; set; }
+        public SystemCreatedListDto SystemCreatedList { get; set; }
     }
 }
