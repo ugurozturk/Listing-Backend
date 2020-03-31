@@ -1,5 +1,9 @@
-﻿using Abp.Application.Services;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using Abp.Application.Services;
+
 using Abp.Domain.Repositories;
+using Abp.Linq.Extensions;
 using UOzturk.Listing.List;
 
 namespace UOzturk.Listing.UserCreatedListItem
@@ -10,6 +14,14 @@ namespace UOzturk.Listing.UserCreatedListItem
             IRepository<UserCreatedListItemEntity, int> repository
             ) : base(repository)
         {
+        }
+
+        protected override IQueryable<UserCreatedListItemEntity> CreateFilteredQuery(UserCreatedListItemPagedRequestDto input){
+            return base.CreateFilteredQuery(input)
+                .WhereIf(input.Name != default, f => f.Name.Contains(input.Name))
+                .WhereIf(input.Score != default, f => f.Score == input.Score)
+                .WhereIf(input.UserCreatedListId != default, f => f.UserCreatedListId == input.UserCreatedListId)
+                .WhereIf(input.SystemCreatedListItemId != default, f => f.SystemCreatedListItemId == input.SystemCreatedListItemId);
         }
     }
 }
