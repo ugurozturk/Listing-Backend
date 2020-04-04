@@ -9,7 +9,5 @@ namespace UOzturk.Listing.UserCreatedListItemTag
     public class UserCreatedListItemTagDto : EntityDto
     {
         public string Name { get; set; }
-
-        public UserCreatedListItemDto UserCreatedListItem { get; set; }
     }
 }

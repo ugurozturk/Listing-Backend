@@ -17,6 +17,7 @@ namespace UOzturk.Listing.UserCreatedListItemTag
         protected override IQueryable<UserCreatedListItemTagEntity> CreateFilteredQuery(UserCreatedListItemTagPagedRequestDto input){
             return base.CreateFilteredQuery(input)
                 .WhereIf(input.Name != default, f => f.Name.Contains(input.Name))
+                .WhereIf(input.UserCreatedListId != default, f => f.UserCreatedListItem.UserCreatedListId == input.UserCreatedListId)
                 .WhereIf(input.UserCreatedListItemId != default, f => f.UserCreatedListItemId == input.UserCreatedListItemId);
         }
     }

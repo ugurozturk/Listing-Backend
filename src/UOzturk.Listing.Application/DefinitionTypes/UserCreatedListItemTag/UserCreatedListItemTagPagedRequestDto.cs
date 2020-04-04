@@ -6,6 +6,8 @@ namespace UOzturk.Listing.UserCreatedListItemTag
     {
         public string Name { get; set; }
 
+        public int? UserCreatedListId { get; set; }
+
         public int? UserCreatedListItemId { get; set; }
     }
 }
