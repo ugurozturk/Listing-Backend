@@ -20,22 +20,16 @@ namespace UOzturk.Listing.EntityFrameworkCore.EntityFrameworkCore.Seed.Host.List
 
         private void CreateSystemCreatedList()
         {
-            var defaultEdition = _context.SystemCreatedListItem.IgnoreQueryFilters().FirstOrDefault(e => e.Name == ListingConsts.DefaultSystemCreatedListItemName);
+            var defaultEdition = _context.SystemCreatedList.IgnoreQueryFilters().FirstOrDefault(e => e.Name == ListingConsts.DefaultSystemCreatedListName);
             if (defaultEdition == null)
             {
-                defaultEdition = new List.SystemCreatedListItemEntity
+                defaultEdition = new List.SystemCreatedListEntity
                 {
-                    Name = ListingConsts.DefaultSystemCreatedListItemName,
-                    Link = string.Empty,
-                    ReleaseDate = DateTime.Today,
-                    IsPc = false,
-                    IsXBox = false,
-                    IsPs = false,
-                    IsVideo = false,
-                    SystemCreatedListId = _context.SystemCreatedList.IgnoreQueryFilters().FirstOrDefault(e => e.Name == ListingConsts.DefaultSystemCreatedListName).Id,
+                    Name = ListingConsts.DefaultSystemCreatedListName,
+                    ListTypeId = _context.ListType.IgnoreQueryFilters().FirstOrDefault(e => e.Name == ListingConsts.DefaultListType).Id
                 };
 
-                _context.SystemCreatedListItem.Add(defaultEdition);
+                _context.SystemCreatedList.Add(defaultEdition);
                 _context.SaveChanges();
             }
         }
