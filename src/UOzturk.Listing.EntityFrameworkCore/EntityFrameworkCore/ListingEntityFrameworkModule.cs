@@ -18,6 +18,8 @@ namespace UOzturk.Listing.EntityFrameworkCore
 
         public override void PreInitialize()
         {
+            Configuration.UnitOfWork.IsTransactional = false;
+
             if (!SkipDbContextRegistration)
             {
                 Configuration.Modules.AbpEfCore().AddDbContext<ListingDbContext>(options =>
