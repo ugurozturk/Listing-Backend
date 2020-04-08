@@ -13,6 +13,7 @@
         public const string DefaultSystemCreatedListItemName = "Genel";
         public const string DefaultUserCreatedListName = "Genel";
         public const string DefaultUserCreatedListItemName = "TestItem";
+        public const string DefaultUserCreatedListItemName2 = "TestItem2";
         public const string DefaultUserName = "admin";
 
         public const string MovieListType = "Movie";
