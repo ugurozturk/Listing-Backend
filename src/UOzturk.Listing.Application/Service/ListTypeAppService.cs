@@ -12,10 +12,5 @@ namespace UOzturk.Listing.ListType
         public ListTypeAppService(IRepository<ListTypeEntity, int> repository) : base(repository)
         {
         }
-
-        public string YoutubeVideoTestServisi() 
-        {
-            return "Youtube Testi Data Döndü";
-        }
     }
 }
