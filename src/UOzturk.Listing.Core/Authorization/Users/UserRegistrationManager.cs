@@ -74,7 +74,7 @@ namespace UOzturk.Listing.Authorization.Users
         {
             if (!AbpSession.TenantId.HasValue)
             {
-                throw new InvalidOperationException("Can not register host users!");
+                throw new UserFriendlyException("Can not register host users!");
             }
         }
 
