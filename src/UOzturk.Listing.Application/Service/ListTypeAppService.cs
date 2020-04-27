@@ -6,7 +6,7 @@ using UOzturk.Listing.List;
 
 namespace UOzturk.Listing.ListType
 {
-    [AbpAuthorize(PermissionNames.Pages_Users)] //TODO:Ugur this might be wrong, check if user can access this method.
+    [AbpAuthorize(PermissionNames.Pages_Users, PermissionNames.Pages_Lists)]
     public class ListTypeAppService : AsyncCrudAppService<ListTypeEntity, ListTypeDto, int, ListTypePagedRequestDto, CreateListTypeDto, UpdateListTypeDto>, IListTypeAppService
     {
         public ListTypeAppService(IRepository<ListTypeEntity, int> repository) : base(repository)
