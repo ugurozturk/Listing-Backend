@@ -13,10 +13,10 @@ namespace UOzturk.Listing.List
         public short Score { get; set; }
 
         [ForeignKey("UserCreatedList")]
-        public int? UserCreatedListId { get; set; }
+        public int UserCreatedListId { get; set; }
 
         [ForeignKey("SystemCreatedListItem")]
-        public int SystemCreatedListItemId { get; set; }
+        public int? SystemCreatedListItemId { get; set; }
 
         public virtual UserCreatedListEntity UserCreatedList { get; set; }
 
