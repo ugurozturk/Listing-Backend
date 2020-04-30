@@ -20,6 +20,6 @@ namespace UOzturk.Listing.UserCreatedListItem
 
     public class CreateUserCreatedListItemWithTagsDto : CreateUserCreatedListItemDto
     {
-        public List<string> Tags { get; set; }
+        public List<string> UserCreatedListItemTags { get; set; }
     }
 }

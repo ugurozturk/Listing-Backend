@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Domain.Repositories;
@@ -12,7 +13,6 @@ namespace UOzturk.Listing.UserCreatedListItem
     public class UserCreatedListItemAppService : AsyncCrudAppService<UserCreatedListItemEntity, UserCreatedListItemDto, int, UserCreatedListItemPagedRequestDto, CreateUserCreatedListItemDto, UserCreatedListItemDto>, IUserCreatedListItemAppService
     {
         private IRepository<UserCreatedListItemTagEntity, int> _userCreatedListItemTagRepository;
-        private readonly IObjectMapper _objectMapper;
 
         public UserCreatedListItemAppService(
             IRepository<UserCreatedListItemEntity, int> repository,
@@ -22,11 +22,12 @@ namespace UOzturk.Listing.UserCreatedListItem
             _userCreatedListItemTagRepository = userCreatedListItemTagRepository;
         }
 
-        public async Task<UserCreatedListItemDto> CreateAsync(CreateUserCreatedListItemWithTagsDto input)
+        public async Task<UserCreatedListItemDto> CreateWithTags(CreateUserCreatedListItemWithTagsDto input)
         {
             UserCreatedListItemDto userCreatedListItemCreateRes = await base.CreateAsync(input);
+            userCreatedListItemCreateRes.UserCreatedListItemTagCollection = new List<UserCreatedListItemTagDto>();
 
-            foreach (string tag in input.Tags)
+            foreach (string tag in input.UserCreatedListItemTags)
             {
                 var createTagDto = new CreateUserCreatedListItemTagDto
                 {
